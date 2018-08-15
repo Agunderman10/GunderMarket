@@ -5,8 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GunderMarket"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="GunderMarket Stores" 
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="CanMinimize"
+        Height="2000"
+        Width="1300"
+        WindowState="Maximized">
+
+    <StackPanel>
+
+        <Grid Background="Blue">
+
+            <!-- Defines Row 0 -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+
+            <!-- Defines Column 0 -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Heading -->
+            <TextBlock Text="GunderMarket" FontSize="90" FontWeight="ExtraBold" Height="250"/>
+
+            <!-- My Profile button -->
+            <Button Content="My Profile" Height="30" Grid.Column="0" Margin="1100 10 20 200"/>
+
+            <!-- Login button -->
+            <Button Content="Login" Height="30" Grid.Column="0" Margin="1100 40 20 160"/>
+
+            <!-- Create an Account button-->
+            <Button Content="Create an Account" Height="30" Grid.Column="0" Margin="1100 70 20 120"/>
+
+        </Grid>
+
+        <Grid>
+
+            <!-- Defines 3 columns that go under previous grid due to StackPanel-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- StackPanel for Column 0 -->
+            <StackPanel>
+
+                <!-- Apple -->
+                <Image Grid.Column="0" Source="https://github.com/Agunderman10/GunderMarket/blob/master/Apple.GunderMarket.jxr?raw=true"/>
+                <TextBlock Text="Quantity" Grid.Column="0"/>
+                <ComboBox/>
+
+                <!-- Avocado -->
+                <Image Grid.Column="0" Source="https://github.com/Agunderman10/GunderMarket/blob/master/Avocado.GunderMarket.jxr?raw=true"/>
+                <TextBlock Text="Quantity" Grid.Column="0"/>
+                <ComboBox/>
+
+            </StackPanel>
+
+        </Grid>
+
+    </StackPanel>
+
 </Window>
