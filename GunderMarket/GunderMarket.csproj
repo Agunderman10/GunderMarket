@@ -93,5 +93,46 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Avocado.bmp" />
+    <Resource Include="ImageFolder\Broccoli.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Apple.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Chicken.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\DietCoke.bmp" />
+    <Resource Include="ImageFolder\Water.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Orange.bmp" />
+    <Resource Include="ImageFolder\Pistachio.bmp" />
+    <Resource Include="ImageFolder\Tomato.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Carrot.bmp" />
+    <Resource Include="ImageFolder\PaperTowel.bmp" />
+    <Resource Include="ImageFolder\PeanutButter.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Pringle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\CocaCola.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Cheeto.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Cheese.bmp" />
+    <Resource Include="ImageFolder\Gatorade.bmp" />
+    <Resource Include="ImageFolder\MnM.bmp" />
+    <Resource Include="ImageFolder\Pepper.bmp" />
+    <Resource Include="ImageFolder\Snickers.bmp" />
+    <Resource Include="ImageFolder\Sugar.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

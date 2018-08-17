@@ -8,64 +8,219 @@
         Title="GunderMarket Stores" 
         WindowStartupLocation="CenterScreen" 
         ResizeMode="CanMinimize"
-        Height="2000"
+        Height="3000"
         Width="1300"
         WindowState="Maximized">
 
-    <StackPanel>
+    <ScrollViewer>
 
-        <Grid Background="Blue">
+        <StackPanel Name="Panel">
 
-            <!-- Defines Row 0 -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="250"/>
-            </Grid.RowDefinitions>
+            <Grid Background="Blue">
 
-            <!-- Defines Column 0 -->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+                <!-- Defines Row 0 -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"/>
+                </Grid.RowDefinitions>
 
-            <!-- Heading -->
-            <TextBlock Text="GunderMarket" FontSize="90" FontWeight="ExtraBold" Height="250"/>
+                <!-- Defines Column 0 -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <!-- My Profile button -->
-            <Button Content="My Profile" Height="30" Grid.Column="0" Margin="1100 10 20 200"/>
+                <!-- Heading -->
+                <TextBlock Text="GunderMarket" FontSize="90" FontWeight="ExtraBold" Height="250"/>
 
-            <!-- Login button -->
-            <Button Content="Login" Height="30" Grid.Column="0" Margin="1100 40 20 160"/>
+                <!-- My Profile button -->
+                <Button Content="My Profile" Height="30" Grid.Column="0" Margin="1100 10 20 200"/>
 
-            <!-- Create an Account button-->
-            <Button Content="Create an Account" Height="30" Grid.Column="0" Margin="1100 70 20 120"/>
+                <!-- Login button -->
+                <Button Content="Login" Height="30" Grid.Column="0" Margin="1100 40 20 160"/>
 
-        </Grid>
+                <!-- Create an Account button -->
+                <Button Content="Create an Account" Height="30" Grid.Column="0" Margin="1100 70 20 120"/>
 
-        <Grid>
+                <!-- Deposit button -->
+                <Button Content="Deposit" Height="30" Grid.Column="0" Margin="1100 100 20 80"/>
 
-            <!-- Defines 3 columns that go under previous grid due to StackPanel-->
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+                <!-- Withdraw button-->
+                <Button Content="Withdraw" Height="30" Grid.Column="0" Margin="1100 130 20 40"/>
 
-            <!-- StackPanel for Column 0 -->
+                <!-- Clear Order button-->
+                <Button Content="Clear Order" Height="30" Grid.Column="0" Margin="1100 160 20 0"/>
+
+                <!-- Defining the Grid that contains the Stack Panel that contains all store items -->
+            </Grid>
+
+            <!-- Defining the StackPanel that contains all store items-->
             <StackPanel>
 
-                <!-- Apple -->
-                <Image Grid.Column="0" Source="https://github.com/Agunderman10/GunderMarket/blob/master/Apple.GunderMarket.jxr?raw=true"/>
-                <TextBlock Text="Quantity" Grid.Column="0"/>
-                <ComboBox/>
+                <!-- Adds margins to all sides of the Grid -->
+                <Grid Margin="20 20 20 20">
 
-                <!-- Avocado -->
-                <Image Grid.Column="0" Source="https://github.com/Agunderman10/GunderMarket/blob/master/Avocado.GunderMarket.jxr?raw=true"/>
-                <TextBlock Text="Quantity" Grid.Column="0"/>
-                <ComboBox/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Column 0 for items -->
+                    <StackPanel Grid.Column="0">
+
+                        <!-- Apple -->
+                        <Image Height="300" Source="ImageFolder\Apple.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="0 5 5 5"/>
+
+                        <!-- Chicken -->
+                        <Image Height="290" Margin="0 10 10 0" Source="ImageFolder\Chicken.bmp"/>
+                        <TextBlock Text="Quality"/>
+                        <ComboBox Margin="0 5 5 5"/>
+
+                        <!-- Orange -->
+                        <Image Height="300" Source="ImageFolder\Orange.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="0 5 5 5"/>
+
+                        <!-- Carrot -->
+                        <Image Height="300" Source="ImageFolder\Carrot.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="0 5 5 5"/>
+
+                        <!-- Pringle -->
+                        <Image Height="300" Source="ImageFolder\Pringle.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="0 5 5 5"/>
+
+                        <!-- Cheese -->
+                        <Image Height="300" Source="ImageFolder\Cheese.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="0 5 5 5"/>
+
+                        <!-- Pepper -->
+                        <Image Height="300" Source="ImageFolder\Pepper.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="0 5 5 5"/>
+
+                    </StackPanel>
+
+                    <!-- Column 1 for items -->
+                    <StackPanel Grid.Column="1">
+
+                        <!-- Avocado -->
+                        <Image Height="300" Source="ImageFolder\Avocado.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- DietCoke -->
+                        <Image Height="300" Source="ImageFolder\DietCoke.bmp"/>
+                        <TextBlock Text="Quality"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- Pistachio -->
+                        <Image Height="300" Source="ImageFolder\Pistachio.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- PaperTowel -->
+                        <Image Height="300" Source="ImageFolder\PaperTowel.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- Cheeto -->
+                        <Image Height="300" Source="ImageFolder\Cheeto.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- Gatorade -->
+                        <Image Height="300" Source="ImageFolder\Gatorade.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- Snickers -->
+                        <Image Height="300" Source="ImageFolder\Snickers.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                    </StackPanel>
+
+                    <!-- Column 2 for items -->
+                    <StackPanel Grid.Column="2">
+
+                        <!-- Broccoli -->
+                        <Image Height="300" Source="ImageFolder\Broccoli.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- Water -->
+                        <Image Height="300" Source="ImageFolder\Water.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- Tomato -->
+                        <Image Height="300" Source="ImageFolder\Tomato.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- PeanutButter -->
+                        <Image Height="300" Source="ImageFolder\PeanutButter.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- CocaCola -->
+                        <Image Height="300" Source="ImageFolder\CocaCola.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- Mnm -->
+                        <Image Height="300" Source="ImageFolder\MnM.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                        <!-- Sugar -->
+                        <Image Height="300" Source="ImageFolder\Sugar.bmp"/>
+                        <TextBlock Text="Quantity"/>
+                        <ComboBox Margin="5 5 5 5"/>
+
+                    </StackPanel>
+
+                </Grid>
 
             </StackPanel>
 
-        </Grid>
+            <!-- Grid that contains all order information -->
+            <Grid Background="Blue" Height="250">
 
-    </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!-- Displays user's Balance -->
+                <TextBlock Text="Your Balance:  " TextAlignment="Center" VerticalAlignment="Center" FontSize="37" FontWeight="ExtraBold" TextWrapping="NOWrap"/>
+                <TextBox Name="BalanceContainer" Text="Balance" FontSize="40" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="10 0 10 0"/>
+
+                <!-- Displays Order Total -->
+                <TextBlock Text="Order Total:" FontSize="40" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Column="2"/>
+                <TextBox Text="Order Total" FontSize="40" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Margin="10 0 10 0"/>
+
+                <!-- Allows user to purchase items selected-->
+                <Button Content="Purchase" FontSize="50" Background="Firebrick" Grid.Column="4"/>
+
+                <TextBlock Grid.Row="1" Grid.ColumnSpan="5" Text="Thank you for shopping at the GunderMarket!" FontSize="55" FontWeight="ExtraBold" TextAlignment="Center" Background="Blue"/>
+
+            </Grid>
+
+        </StackPanel>
+
+    </ScrollViewer>
 
 </Window>
