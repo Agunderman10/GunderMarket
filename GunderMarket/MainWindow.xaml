@@ -14,7 +14,7 @@
 
     <ScrollViewer>
 
-        <StackPanel Name="Panel">
+        <StackPanel>
 
             <Grid Background="Blue">
 
@@ -70,37 +70,37 @@
                         <!-- Apple -->
                         <Image Height="300" Source="ImageFolder\Apple.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="0 5 5 5"/>
+                        <TextBox Margin="0 5 5 5"/>
 
                         <!-- Chicken -->
                         <Image Height="290" Margin="0 10 10 0" Source="ImageFolder\Chicken.bmp"/>
                         <TextBlock Text="Quality"/>
-                        <ComboBox Margin="0 5 5 5"/>
+                        <TextBox Margin="0 5 5 5"/>
 
                         <!-- Orange -->
                         <Image Height="300" Source="ImageFolder\Orange.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="0 5 5 5"/>
+                        <TextBox Margin="0 5 5 5"/>
 
                         <!-- Carrot -->
                         <Image Height="300" Source="ImageFolder\Carrot.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="0 5 5 5"/>
+                        <TextBox Margin="0 5 5 5"/>
 
                         <!-- Pringle -->
                         <Image Height="300" Source="ImageFolder\Pringle.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="0 5 5 5"/>
+                        <TextBox Margin="0 5 5 5"/>
 
                         <!-- Cheese -->
                         <Image Height="300" Source="ImageFolder\Cheese.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="0 5 5 5"/>
+                        <TextBox Margin="0 5 5 5"/>
 
                         <!-- Pepper -->
                         <Image Height="300" Source="ImageFolder\Pepper.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="0 5 5 5"/>
+                        <TextBox Margin="0 5 5 5"/>
 
                     </StackPanel>
 
@@ -110,37 +110,37 @@
                         <!-- Avocado -->
                         <Image Height="300" Source="ImageFolder\Avocado.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- DietCoke -->
                         <Image Height="300" Source="ImageFolder\DietCoke.bmp"/>
                         <TextBlock Text="Quality"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- Pistachio -->
                         <Image Height="300" Source="ImageFolder\Pistachio.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- PaperTowel -->
                         <Image Height="300" Source="ImageFolder\PaperTowel.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- Cheeto -->
                         <Image Height="300" Source="ImageFolder\Cheeto.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- Gatorade -->
                         <Image Height="300" Source="ImageFolder\Gatorade.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- Snickers -->
                         <Image Height="300" Source="ImageFolder\Snickers.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                     </StackPanel>
 
@@ -150,37 +150,37 @@
                         <!-- Broccoli -->
                         <Image Height="300" Source="ImageFolder\Broccoli.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- Water -->
                         <Image Height="300" Source="ImageFolder\Water.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- Tomato -->
                         <Image Height="300" Source="ImageFolder\Tomato.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- PeanutButter -->
                         <Image Height="300" Source="ImageFolder\PeanutButter.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- CocaCola -->
                         <Image Height="300" Source="ImageFolder\CocaCola.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- Mnm -->
                         <Image Height="300" Source="ImageFolder\MnM.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                         <!-- Sugar -->
                         <Image Height="300" Source="ImageFolder\Sugar.bmp"/>
                         <TextBlock Text="Quantity"/>
-                        <ComboBox Margin="5 5 5 5"/>
+                        <TextBox Margin="5 5 5 5"/>
 
                     </StackPanel>
 

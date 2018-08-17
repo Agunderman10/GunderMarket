@@ -8,10 +8,23 @@ namespace GunderMarket
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        #region Private Members
+
+        private bool isLoggedIn;
+
+        #endregion
+
+        #region Initial Constructor
+
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        #endregion
+
+
 
     }
 }
