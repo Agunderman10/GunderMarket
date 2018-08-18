@@ -1,0 +1,38 @@
+﻿<Window x:Class="GunderMarket.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GunderMarket"
+        mc:Ignorable="d"
+        Title="Login Page" Height="200" Width="500"
+        ResizeMode="NoResize"
+        WindowStartupLocation="Manual"
+        Top="40"
+        Left="600">
+    
+    <Grid Background="Tan">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Username TextBlock and TextBox -->
+        <TextBlock Text="Username:" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Background="Tan"/>
+        <TextBox BorderBrush="Black" BorderThickness="3" Padding="3" Grid.Column="1" Margin="-30 15 30 5" VerticalAlignment="Center"/>
+        
+        <!-- Password TextBlock and TextBox -->
+        <TextBlock Text="Password:" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Grid.Row="1"/>
+        <TextBox BorderBrush="Black" BorderThickness="3" Padding="3" Grid.Column="1" Grid.Row="1" Margin="-30 15 30 5" VerticalAlignment="Center"/>
+
+        <!-- Finish Login button -->
+        <Button Content="Finish Login" Grid.Column="1" Grid.Row="2" FontWeight="Bold"  Margin="130 10 30 10" Background="Firebrick"/>
+    </Grid>
+</Window>

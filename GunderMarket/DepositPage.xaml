@@ -1,0 +1,38 @@
+﻿<Window x:Class="GunderMarket.DepositPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GunderMarket"
+        mc:Ignorable="d"
+        Title="DepositPage" Height="200" Width="500"
+        WindowStartupLocation="Manual"
+        Top="40"
+        Left="600">
+    
+    <Grid Background="Tan">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- TextBlock and TextBox for deposit -->
+        <TextBlock Text="Deposit:" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
+        <TextBox BorderBrush="Black" BorderThickness="3" Padding="3" Margin="-60 15 30 10" Grid.Column="1"/>
+        
+        <!-- TextBlock and TextBox for balance -->
+        <TextBlock Text="Balance:" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Grid.Row="1"/>
+        <TextBox IsReadOnly="True" BorderBrush="Black" BorderThickness="3" Padding="3" Margin="-60 15 30 10" Grid.Column="1" Grid.Row="1"/>
+
+        <!-- Button to finish creating account -->
+        <Button Content="Finish Deposit" Grid.Column="1" Grid.Row="2" FontWeight="Bold"  Margin="120 10 30 10" Background="Firebrick"/>
+
+    </Grid>
+</Window>
