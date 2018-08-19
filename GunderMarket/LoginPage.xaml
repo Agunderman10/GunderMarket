@@ -26,13 +26,13 @@
 
         <!-- Username TextBlock and TextBox -->
         <TextBlock Text="Username:" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Background="Tan"/>
-        <TextBox BorderBrush="Black" BorderThickness="3" Padding="3" Grid.Column="1" Margin="-30 15 30 5" VerticalAlignment="Center"/>
+        <TextBox Name="UsernameTextBox" BorderBrush="Black" BorderThickness="3" Padding="3" Grid.Column="1" Margin="-30 15 30 5" VerticalAlignment="Center"/>
         
         <!-- Password TextBlock and TextBox -->
         <TextBlock Text="Password:" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Grid.Row="1"/>
-        <TextBox BorderBrush="Black" BorderThickness="3" Padding="3" Grid.Column="1" Grid.Row="1" Margin="-30 15 30 5" VerticalAlignment="Center"/>
+        <TextBox Name="PasswordTextBox" BorderBrush="Black" BorderThickness="3" Padding="3" Grid.Column="1" Grid.Row="1" Margin="-30 15 30 5" VerticalAlignment="Center"/>
 
         <!-- Finish Login button -->
-        <Button Content="Finish Login" Grid.Column="1" Grid.Row="2" FontWeight="Bold"  Margin="130 10 30 10" Background="Firebrick"/>
+        <Button Content="Finish Login" Grid.Column="1" Grid.Row="2" FontWeight="Bold"  Margin="130 10 30 10" Background="Firebrick" Click="Button_Click"/>
     </Grid>
 </Window>

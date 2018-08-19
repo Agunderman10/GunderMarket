@@ -29,27 +29,30 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Heading -->
-                <TextBlock Text="GunderMarket" FontSize="90" FontWeight="ExtraBold" Height="250"/>
+                <TextBlock Text="GunderMarket" FontSize="90" FontWeight="ExtraBold"/>
 
                 <!-- Login button -->
-                <Button Content="Login" Height="30" Grid.Column="0" Margin="1100 10 20 200" Click="Button_Clicks"/>
+                <Button Name="LoginButton" Content="Login" IsEnabled="False" Height="30" Grid.Column="0" Margin="1100 10 20 200" Click="Button_Clicks"/>
 
                 <!-- Create an Account button -->
-                <Button Content="Create an Account" Height="30" Grid.Column="0" Margin="1100 40 20 160" Click="Button_Clicks"/>
+                <Button Name="CreateAnAccountButton" Content="Create an Account" IsEnabled="False" Height="30" Grid.Column="0" Margin="1100 40 20 160" Click="Button_Clicks"/>
 
                 <!-- Deposit button -->
-                <Button Content="Deposit" Height="30" Grid.Column="0" Margin="1100 70 20 120" Click="Button_Clicks"/>
+                <Button Name="DepositButton" Content="Deposit" Height="30" Grid.Column="0" Margin="1100 70 20 120" Click="Button_Clicks"/>
 
                 <!-- Withdraw button-->
-                <Button Content="Withdraw" Height="30" Grid.Column="0" Margin="1100 100 20 80" Click="Button_Clicks"/>
+                <Button Name="WithdrawButton" Content="Withdraw" Height="30" Grid.Column="0" Margin="1100 100 20 80" Click="Button_Clicks"/>
 
                 <!-- Clear Order button-->
-                <Button Content="Clear Order" Height="30" Grid.Column="0" Margin="1100 130 20 40"/>
+                <Button Name="ClearOrderButton" Content="Clear Order" Height="30" Grid.Column="0" Margin="1100 130 20 40"/>
 
                 <!-- Logout button -->
-                <Button Content="Logout" Height="30" Grid.Column="0" Margin="1100 160 20 0"/>
+                <Button Name="LogoutButton" Content="Logout" Height="30" Grid.Column="0" Margin="1100 160 20 0"/>
 
-                <!-- Defining the Grid that contains the Stack Panel that contains all store items -->
+                <!-- tells user to login to use the application, only visible if user is not logged in -->
+                <TextBlock Name="LoginTextBox" Text="Login to start shopping now!" Visibility="Hidden" FontSize="40" FontWeight="Bold" TextAlignment="Left" Margin="10 180 0 10"/>
+                
+            <!-- Defining the Grid that contains the Stack Panel that contains all store items -->
             </Grid>
 
             <StackPanel Name="Panel">
@@ -207,11 +210,11 @@
 
                 <!-- Displays user's Balance -->
                 <TextBlock Text="Your Balance:  " TextAlignment="Center" VerticalAlignment="Center" FontSize="37" FontWeight="ExtraBold" TextWrapping="NOWrap"/>
-                <TextBox Name="BalanceContainer" Text="$0" FontSize="40" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="10 0 10 0"/>
+                <TextBox Name="BalanceContainer" Text="$0" IsReadOnly="True" FontSize="40" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="10 0 10 0"/>
 
                 <!-- Displays Order Total -->
                 <TextBlock Text="Order Total:" FontSize="40" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Column="2"/>
-                <TextBox Text="$0" FontSize="40" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Margin="10 0 10 0"/>
+                <TextBox Text="$0" FontSize="40" IsReadOnly="True" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Margin="10 0 10 0"/>
 
                 <!-- Allows user to purchase items selected-->
                 <Button Content="Purchase" FontSize="50" Background="Firebrick" Grid.Column="4"/>

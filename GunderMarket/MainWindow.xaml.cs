@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Collections;
 using System.Windows.Controls;
 
 namespace GunderMarket
@@ -12,12 +13,17 @@ namespace GunderMarket
         //holds all needed variables
         #region Private Members
 
+        LoginPage loginPage = new LoginPage();
+
         //tells if the user is logged into their account
         private bool isLoggedIn = false;
 
 
         //tells if the user has intitiated a new purchase
         private bool isPurchaseEnded = true;
+
+        //user's balance
+        private double userBalance;
 
         #endregion
 
@@ -28,6 +34,8 @@ namespace GunderMarket
 
             InitializeComponent();
 
+            LoggedInChecker();
+            
             NewPurchase();
 
         }
@@ -47,28 +55,65 @@ namespace GunderMarket
             //casts sender to a button
             Button button = (Button)sender;
 
-            //switches through button.Content to learn which button is clicked and the following events
-            switch(button.Content)
+            //switches through button.Content to learn which button is clicked and decides which actions shall occur
+            switch (button.Content)
             {
 
                 case "Login":
-                    LoginPage loginPage = new LoginPage();
+
                     loginPage.Show();
-                    break; 
+
+                    break;
+
+                case "Finish Login":
+
+                    NewLogin();
+
+                    break;
 
                 case "Create an Account":
+
                     CreateAccountPage createAccountPage = new CreateAccountPage();
                     createAccountPage.Show();
+
+                    break;
+
+                case "Create Account":
+
+                    CreateNewAccount();
+
                     break;
 
                 case "Deposit":
+
                     DepositPage depositPage = new DepositPage();
                     depositPage.Show();
+
+                    break;
+
+                case "Finish Deposit":
+
                     break;
 
                 case "Withdraw":
+
                     WithdrawPage withdrawPage = new WithdrawPage();
                     withdrawPage.Show();
+
+                    break;
+
+                case "Finish Withdraw":
+
+                    break;
+
+                case "Clear Order":
+
+                    break;
+
+                case "Logout":
+
+                    isLoggedIn = false;
+
                     break;
 
             }
@@ -80,11 +125,76 @@ namespace GunderMarket
         #region NewLogin
 
         /// <summary>
-        /// called when button is clicked
+        /// called when login button is clicked, holds the usernames and passwords for login
         /// </summary>
         public void NewLogin()
         {
+            //creates variable for user created username
+            string userUserName = loginPage.UsernameTextBox.Text;
 
+            //creates variable for user created password
+            string userPassword = loginPage.PasswordTextBox.Text;
+
+            if (userUserName == "" || userPassword == "")
+            {
+                MessageBox.Show("Error");
+            }
+            //holds all usernames
+            ArrayList usernameList = new ArrayList
+            {
+
+                "admin"
+
+            };
+
+            //adds user created username to ArrayList that contains usernames
+            usernameList.Add(userUserName);
+
+            ArrayList passwordList = new ArrayList
+            {
+
+                "12345"
+
+            };
+
+            //adds user created password to ArrayList that contains passwords
+            passwordList.Add(userPassword);
+
+            loginPage.Close();
+
+            //user creates account and is now logged in
+            isLoggedIn = true;
+        }
+
+        public void CreateNewAccount()
+        {
+
+            
+
+        }
+
+        #endregion
+
+        #region LoggedInChecker
+
+        /// <summary>
+        /// checks if user is logged in, then it sets certain items to be unusable
+        /// </summary>
+        public void LoggedInChecker()
+        {
+            if (isLoggedIn == false)
+            {
+
+                Panel.IsEnabled = false;
+                LoginButton.IsEnabled = true;
+                CreateAnAccountButton.IsEnabled = true;
+                DepositButton.IsEnabled = false;
+                WithdrawButton.IsEnabled = false;
+                ClearOrderButton.IsEnabled = false;
+                LogoutButton.IsEnabled = false;
+                LoginTextBox.Visibility = Visibility.Visible;
+
+            }
         }
 
         #endregion
@@ -101,10 +211,7 @@ namespace GunderMarket
             isPurchaseEnded = false;
 
             //if user is not logged in, Panel cannot be accessed
-            if (isLoggedIn == false)
-            {
-                Panel.IsEnabled = false;
-            }
+            LoggedInChecker();
 
         }
 
