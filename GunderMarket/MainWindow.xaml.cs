@@ -15,8 +15,7 @@ namespace GunderMarket
 
         LoginPage loginPage = new LoginPage();
 
-        //tells if the user is logged into their account
-        public bool isLoggedIn;
+        public bool IsLoggedIn { get; set; }
 
         //user's balance
         private double userBalance;
@@ -29,8 +28,7 @@ namespace GunderMarket
         {
 
             InitializeComponent();
-
-            LoggedInChecker();
+            IsLoggedIn = false; //delete if we run into problems
 
         }
 
@@ -54,58 +52,51 @@ namespace GunderMarket
             {
 
                 case "Login":
-                    
-                    loginPage.Show();
 
-                    break;
-
-                case "Finish Login":
-
-                    NewLogin();
-
+                    if (IsLoggedIn == false) //if user is not logged in, open login page
+                        loginPage.Show();
+                    else if (IsLoggedIn == true)
+                        NeedToLoginMessage();
                     break;
 
                 case "Create an Account":
 
+                    if (IsLoggedIn == false) { //if user is not logged in, open create account page
                     CreateAccountPage createAccountPage = new CreateAccountPage();
                     createAccountPage.Show();
-
-                    break;
-
-                case "Create Account":
+                    }
+                    else if (IsLoggedIn == true)
+                        NeedToLoginMessage();
 
                     break;
 
                 case "Deposit":
 
+                    if (IsLoggedIn == true) { //if user is logged in, open deposit page
                     DepositPage depositPage = new DepositPage();
                     depositPage.Show();
-
-                    break;
-
-                case "Finish Deposit":
+                    }
+                    else if (IsLoggedIn == false)
+                        NeedToLoginMessage();
 
                     break;
 
                 case "Withdraw":
 
+                    if (IsLoggedIn == true) { //if user is logged in, open withdraw page
                     WithdrawPage withdrawPage = new WithdrawPage();
                     withdrawPage.Show();
-
-                    break;
-
-                case "Finish Withdraw":
+                    }
+                    else if (IsLoggedIn == false)
+                        NeedToLoginMessage();
 
                     break;
 
                 case "Clear Order":
-
                     break;
 
                 case "Logout":
 
-                    isLoggedIn = false;
-
                     break;
 
             }
@@ -114,42 +105,16 @@ namespace GunderMarket
 
         #endregion
 
-        #region NewLogin
+        #region NeedToLoginMessage
 
-        /// <summary>
-        /// called when login button is clicked, holds the usernames and passwords for login
-        /// </summary>
-        public void NewLogin()
+        public void NeedToLoginMessage()
         {
-            //user creates account and is now logged in
-            isLoggedIn = true;
+            if (IsLoggedIn == false)
+                MessageBox.Show("You are not logged in. Please login.");
+            else if (IsLoggedIn == true)
+                MessageBox.Show("You are already logged in!");
         }
 
         #endregion
-
-        #region LoggedInChecker
-
-        /// <summary>
-        /// checks if user is logged in, then it sets certain items to be unusable
-        /// </summary>
-        public void LoggedInChecker()
-        {
-            if (isLoggedIn == false)
-            {
-
-                Panel.IsEnabled = false;
-                LoginButton.IsEnabled = true;
-                CreateAnAccountButton.IsEnabled = true;
-                DepositButton.IsEnabled = false;
-                WithdrawButton.IsEnabled = false;
-                ClearOrderButton.IsEnabled = false;
-                LogoutButton.IsEnabled = false;
-                LoginTextBox.Visibility = Visibility.Visible;
-
-            }
-        }
-
-        #endregion
-
     }
 }

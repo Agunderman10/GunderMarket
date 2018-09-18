@@ -32,10 +32,10 @@
                 <TextBlock Text="GunderMarket" FontSize="90" FontWeight="ExtraBold"/>
 
                 <!-- Login button -->
-                <Button Name="LoginButton" Content="Login" IsEnabled="False" Height="30" Grid.Column="0" Margin="1100 10 20 200" Click="Button_Clicks"/>
+                <Button Name="LoginButton" Content="Login" Height="30" Grid.Column="0" Margin="1100 10 20 200" Click="Button_Clicks"/>
 
                 <!-- Create an Account button -->
-                <Button Name="CreateAnAccountButton" Content="Create an Account" IsEnabled="False" Height="30" Grid.Column="0" Margin="1100 40 20 160" Click="Button_Clicks"/>
+                <Button Name="CreateAnAccountButton" Content="Create an Account" Height="30" Grid.Column="0" Margin="1100 40 20 160" Click="Button_Clicks"/>
 
                 <!-- Deposit button -->
                 <Button Name="DepositButton" Content="Deposit" Height="30" Grid.Column="0" Margin="1100 70 20 120" Click="Button_Clicks"/>

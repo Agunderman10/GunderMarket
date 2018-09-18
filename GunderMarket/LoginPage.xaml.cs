@@ -46,6 +46,8 @@ namespace GunderMarket
                 (usernameList.IndexOf(enteredUserName) == (passwordList.IndexOf(enteredPassword))))
             {
                 Close();
+                MainWindow mw = new MainWindow();
+                mw.IsLoggedIn = true;
             }
         }
     }
