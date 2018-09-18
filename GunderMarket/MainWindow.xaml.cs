@@ -16,11 +16,7 @@ namespace GunderMarket
         LoginPage loginPage = new LoginPage();
 
         //tells if the user is logged into their account
-        private bool isLoggedIn = false;
-
-
-        //tells if the user has intitiated a new purchase
-        private bool isPurchaseEnded = true;
+        public bool isLoggedIn;
 
         //user's balance
         private double userBalance;
@@ -35,8 +31,6 @@ namespace GunderMarket
             InitializeComponent();
 
             LoggedInChecker();
-            
-            NewPurchase();
 
         }
 
@@ -60,7 +54,7 @@ namespace GunderMarket
             {
 
                 case "Login":
-
+                    
                     loginPage.Show();
 
                     break;
@@ -79,8 +73,6 @@ namespace GunderMarket
                     break;
 
                 case "Create Account":
-
-                    CreateNewAccount();
 
                     break;
 
@@ -129,48 +121,8 @@ namespace GunderMarket
         /// </summary>
         public void NewLogin()
         {
-            //creates variable for user created username
-            string userUserName = loginPage.UsernameTextBox.Text;
-
-            //creates variable for user created password
-            string userPassword = loginPage.PasswordTextBox.Text;
-
-            if (userUserName == "" || userPassword == "")
-            {
-                MessageBox.Show("Error");
-            }
-            //holds all usernames
-            ArrayList usernameList = new ArrayList
-            {
-
-                "admin"
-
-            };
-
-            //adds user created username to ArrayList that contains usernames
-            usernameList.Add(userUserName);
-
-            ArrayList passwordList = new ArrayList
-            {
-
-                "12345"
-
-            };
-
-            //adds user created password to ArrayList that contains passwords
-            passwordList.Add(userPassword);
-
-            loginPage.Close();
-
             //user creates account and is now logged in
             isLoggedIn = true;
-        }
-
-        public void CreateNewAccount()
-        {
-
-            
-
         }
 
         #endregion
@@ -199,22 +151,5 @@ namespace GunderMarket
 
         #endregion
 
-        #region NewPurchase
-
-        /// <summary>
-        /// runs if user starts new purchase
-        /// </summary>
-        public void NewPurchase()
-        {
-
-            //tells that a new purchase has been started
-            isPurchaseEnded = false;
-
-            //if user is not logged in, Panel cannot be accessed
-            LoggedInChecker();
-
-        }
-
-        #endregion
     }
 }

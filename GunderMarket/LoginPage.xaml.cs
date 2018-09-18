@@ -1,16 +1,7 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GunderMarket
 {
@@ -19,15 +10,43 @@ namespace GunderMarket
     /// </summary>
     public partial class LoginPage : Window
     {
+        public string enteredUserName;
+        public string enteredPassword;
+
         public LoginPage()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Login_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.NewLogin();
+            //creates variable for user created username
+            enteredUserName = UsernameTextBox.Text;
+
+            //creates variable for user created password
+            enteredPassword = PasswordTextBox.Text;
+
+            //holds all usernames
+            List<string> usernameList = new List<string>
+            {
+                "admin",
+                //userUserName //adds user created username to ArrayList that contains usernames
+            };
+
+            //holds all passwords
+            List<string> passwordList = new List<string>
+            {
+                "12345",
+                //userPassword //adds user created password to ArrayList that contains passwords
+            };
+
+            //if entered password and username are found in the username and password lists and have matching indexes,
+            //then user is able to login.
+            if ((usernameList.Contains(enteredUserName) && passwordList.Contains(enteredPassword)) && 
+                (usernameList.IndexOf(enteredUserName) == (passwordList.IndexOf(enteredPassword))))
+            {
+                Close();
+            }
         }
     }
 }
