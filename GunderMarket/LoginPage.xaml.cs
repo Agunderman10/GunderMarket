@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System;
 
 namespace GunderMarket
 {
@@ -7,9 +8,14 @@ namespace GunderMarket
     /// </summary>
     public partial class LoginPage : Window
     {
+        MainWindowViewModel viewModel = new MainWindowViewModel();
+
         public LoginPage()
         {
             InitializeComponent();
+            this.DataContext = viewModel;
+            if(viewModel.CloseAction == null)
+                viewModel.CloseAction = new Action(this.Close);
         }
     }
 }

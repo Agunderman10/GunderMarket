@@ -54,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\ButtonCommands.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="WithdrawPage.xaml.cs">
       <DependentUpon>WithdrawPage.xaml</DependentUpon>
     </Compile>
@@ -162,5 +164,6 @@
     <Resource Include="ImageFolder\Snickers.bmp" />
     <Resource Include="ImageFolder\Sugar.bmp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
