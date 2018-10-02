@@ -56,6 +56,23 @@ namespace GunderMarket
                 case "FinishLoginButton":
                     viewModel.LoginChecks();
                     break;
+                case "PurchaseButton":
+                    //hack to just see if user has chosen a new quantity other than zero for any items. this assumes balance always starts at 1000. needs changed
+                    if (viewModel.AfterOrderBalance == 1000)
+                    {
+                        MessageBox.Show("You have not chosen any items to purchase");
+                    }
+                    else if(viewModel.AfterOrderBalance != 1000)
+                    {
+                        if(MessageBox.Show("Are you sure you want to purchase these items?", "Purchase Verification", MessageBoxButton.YesNo) 
+                            == MessageBoxResult.Yes)
+                        {
+                            viewModel.ResetPurchase();
+                        }
+                        
+                    }
+                    
+                    break;
             }
         }
     }
