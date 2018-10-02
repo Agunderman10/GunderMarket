@@ -8,12 +8,13 @@ namespace GunderMarket
 {
     internal sealed class MainWindowViewModel : INotifyPropertyChanged
     {
-        
+
         #region Private Members
 
         private bool _isLoggedIn = false;
         private string _enteredUsername;
         private string _enteredPassword;
+        private double _defaultBalance = 1000;
         private int _appleQuantity;
         private int _chickenQuantity;
         private int _orangeQuantity;
@@ -100,7 +101,7 @@ namespace GunderMarket
                 }
             }
         }
-        
+
         /// <summary>
         /// property sets EnteredPassword to value that user enters into the password textbox, raises propertychanged event
         /// </summary>
@@ -109,20 +110,20 @@ namespace GunderMarket
             get => this._enteredPassword;
             set
             {
-                if(this._enteredPassword != value)
+                if (this._enteredPassword != value)
                 {
                     this._enteredPassword = value;
                     OnPropertyChanged("EnteredPassword");
                 }
             }
         }
-        
+
         public double Balance
         {
-            get => 1000;
+            get => _defaultBalance;
             set
             {
-                Balance = BalanceCalculator() + 1000;
+                Balance = BalanceCalculator() + _defaultBalance;
                 OnPropertyChanged("Balance");
             }
         }
@@ -136,7 +137,7 @@ namespace GunderMarket
                 OnPropertyChanged("AfterOrderBalance");
             }
         }
-        
+
         public double OrderTotal
         {
             get => BalanceCalculator();
@@ -153,7 +154,7 @@ namespace GunderMarket
         public Action CloseAction { get; set; }
 
         #region PriceAutoProperties
-       
+
         /// <summary>
         /// all properties of the prices of each store item
         /// </summary>
@@ -568,7 +569,7 @@ namespace GunderMarket
         }
         #endregion
         #region ResetPurchase
-        
+
         /// <summary>
         /// if user finishes purchase, we clear all quantity textboxes in preporation for new order
         /// </summary>
@@ -580,7 +581,7 @@ namespace GunderMarket
             CarrotQuantity = 0;
             PringleQuantity = 0;
             CheeseQuantity = 0;
-            PepperQuantity = 0; 
+            PepperQuantity = 0;
             AvocadoQuantity = 0;
             DietCokeQuantity = 0;
             PistachioQuantity = 0;

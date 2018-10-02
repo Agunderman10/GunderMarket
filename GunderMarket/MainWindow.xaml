@@ -294,23 +294,12 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Column="0">
-                        <!-- Displays user's Balance -->
-                        <TextBlock Text="Your Balance:  " TextAlignment="Center" VerticalAlignment="Center" FontSize="25" FontWeight="ExtraBold" TextWrapping="NoWrap"/>
-                        <TextBlock Background="White" FontSize="35" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="10 10 10 0">
-                        <Run Text="$"/>
-                        <Run Text="{Binding Balance}"/>
-                        </TextBlock>
-                    </StackPanel>
-
-                    <StackPanel Grid.Column="1">
-                        <!-- Displays what user's balance would be after order -->
-                        <TextBlock Text="Balance after Order:" TextAlignment="Center" FontSize="25" TextWrapping="NoWrap" FontWeight="ExtraBold"/>
-                        <TextBlock Background="White" FontSize="35" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Margin="10 10 10 0">
+                    <!-- Displays what user's balance would be after order -->
+                    <TextBlock Text="Balance after Order:" TextAlignment="Center" FontSize="40" TextWrapping="Wrap" FontWeight="ExtraBold" Grid.Column="0" VerticalAlignment="Top"/>
+                    <TextBlock Background="White" FontSize="35" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" Margin="10 5 10 0" Grid.Column="1">
                             <Run Text="$"/>
                             <Run Text="{Binding AfterOrderBalance}"/>
-                        </TextBlock>
-                    </StackPanel>
+                    </TextBlock>
 
                     <!-- Displays Order Total -->
                     <TextBlock Text="Order Total:" FontSize="40" FontWeight="ExtraBold" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Column="2"/>
