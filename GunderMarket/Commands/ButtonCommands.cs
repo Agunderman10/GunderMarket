@@ -48,7 +48,7 @@ namespace GunderMarket
                     withdrawPage.Show();
                     break;
                 case "ClearOrderButton":
-                    //code here
+                    viewModel.ResetPurchase();
                     break;
                 case "LogoutButton":
                     //code here
