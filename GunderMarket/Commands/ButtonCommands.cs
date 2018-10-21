@@ -25,7 +25,6 @@ namespace GunderMarket
         /// <param name="parameter"></param>
         public void Execute(object parameter)
         {
-            LoginPage loginPage = new LoginPage();
             CreateAccountPage createAccountPage = new CreateAccountPage();
             DepositPage depositPage = new DepositPage();
             WithdrawPage withdrawPage = new WithdrawPage();
@@ -34,9 +33,9 @@ namespace GunderMarket
             {
                 case "LoginPageButton":
                     if (viewModel.IsLoggedIn == false)
-                    loginPage.Show();
+                        MainWindow.loginPage.Show();
                     else if (viewModel.IsLoggedIn == true)
-                            loginPage.Close();
+                        MainWindow.loginPage.Close();
                     break;
                 case "CreateAccountPageButton":
                     createAccountPage.Show();

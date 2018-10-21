@@ -6,7 +6,7 @@ using System.Windows.Input;
 
 namespace GunderMarket
 {
-    internal sealed class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : INotifyPropertyChanged
     {
 
         #region Private Members
@@ -147,11 +147,6 @@ namespace GunderMarket
                 OnPropertyChanged("OrderTotal");
             }
         }
-
-        /// <summary>
-        /// action that is called when the user's login info is correct, closes LoginPage window
-        /// </summary>
-        public Action CloseAction { get; set; }
 
         #region PriceAutoProperties
 
@@ -553,25 +548,25 @@ namespace GunderMarket
         #region LoginChecks
 
         /// <summary>
-        /// checks that user login info matches login info in the username and password lists, if it matches, it calls CloseAction()
+        /// checks that user login info matches login info in the username and password lists, if it matches
         /// </summary>
         public void LoginChecks()
         {
-            LoginPage loginPage = new LoginPage();
             if ((usernameList.Contains(EnteredUsername) &&
                passwordList.Contains(EnteredPassword)) &&
                (usernameList.IndexOf(EnteredUsername) ==
                (passwordList.IndexOf(EnteredPassword))))
             {
                 IsLoggedIn = true;
-                CloseAction();
+                MainWindow.loginPage.Close();
+                OnPropertyChanged("IsLoggedIn");
             }
         }
         #endregion
         #region ResetPurchase
 
         /// <summary>
-        /// if user finishes purchase, we clear all quantity textboxes in preporation for new order
+        /// if user finishes purchase, we clear all quantity textboxes in preparation for new order
         /// </summary>
         public void ResetPurchase()
         {

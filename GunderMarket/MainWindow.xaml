@@ -7,14 +7,10 @@
         mc:Ignorable="d"
         Title="GunderMarket Stores" 
         WindowStartupLocation="CenterScreen" 
-        ResizeMode="CanMinimize"
+        ResizeMode="CanResize"
         Height="3100"
         Width="1300"
         WindowState="Maximized">
-
-    <Window.DataContext>
-        <local:MainWindowViewModel/>
-    </Window.DataContext>
 
     <ScrollViewer>
 
@@ -22,7 +18,7 @@
 
             <Grid Background="Blue">
 
-                <!-- Defines Row 0 -->
+                <!-- Defines Row 0 and Row 1 -->
                 <Grid.RowDefinitions>
                     <RowDefinition Height="250"/>
                 </Grid.RowDefinitions>
@@ -56,7 +52,7 @@
                 <!-- Defining the Grid that contains the Stack Panel that contains all store items -->
             </Grid>
 
-            <StackPanel Name="Panel">
+            <StackPanel IsEnabled="{Binding IsLoggedIn}">
 
                 <!-- Defining the StackPanel that contains all store items-->
                 <StackPanel>
