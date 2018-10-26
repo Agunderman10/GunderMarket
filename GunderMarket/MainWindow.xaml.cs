@@ -9,7 +9,6 @@ namespace GunderMarket
         public MainWindow()
         {
             loginPage.DataContext = mainViewModel;
-            //loginPage.Show();
             InitializeComponent();
             this.DataContext = mainViewModel;
         } 

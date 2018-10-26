@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace GunderMarket
@@ -67,6 +66,9 @@ namespace GunderMarket
                             == MessageBoxResult.Yes)
                         {
                             viewModel.ResetPurchase();
+                            MessageBox.Show("You will now be logged out. Thank you for shopping at GunderMarket!");
+                            viewModel.IsLoggedIn = false;
+                            viewModel.OnPropertyChanged("IsLoggedIn");
                         }
                         
                     }
