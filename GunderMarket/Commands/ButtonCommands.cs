@@ -58,7 +58,7 @@ namespace GunderMarket
                     //hack to just see if user has chosen a new quantity other than zero for any items. this assumes balance always starts at 1000. needs changed
                     if (viewModel.AfterOrderBalance == 1000)
                     {
-                        MessageBox.Show("You have not chosen any items to purchase");
+                        MessageBox.Show("You have not chosen any items to purchase.");
                     }
                     else if(viewModel.AfterOrderBalance != 1000)
                     {
