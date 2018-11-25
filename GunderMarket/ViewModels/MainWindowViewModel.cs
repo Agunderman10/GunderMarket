@@ -15,6 +15,7 @@ namespace GunderMarket
         private string _enteredUsername;
         private string _enteredPassword;
         private double _defaultBalance = 1000;
+        private double _depositAmount = 0;
         private int _appleQuantity;
         private int _chickenQuantity;
         private int _orangeQuantity;
@@ -39,7 +40,7 @@ namespace GunderMarket
 
         #endregion
 
-        #region Constructor
+        #region Initial Constructor
 
         /// <summary>
         /// Constructor calls ButtonCommands
@@ -52,17 +53,16 @@ namespace GunderMarket
         #endregion
 
         #region Username and Password Lists
-
         /// <summary>
         /// lists that contain all username and password login info, used to check if user login info matches
         /// </summary>
-        internal List<string> usernameList = new List<string>
+        private List<string> usernameList = new List<string>
         {
-            "admin",
+            "admin"
         };
-        internal List<string> passwordList = new List<string>
+        private List<string> passwordList = new List<string>
         {
-            "12345",
+            "12345"
         };
 
         #endregion
@@ -148,6 +148,19 @@ namespace GunderMarket
             }
         }
 
+        public double DepositAmount
+        {
+            get => _depositAmount;
+            set
+            {
+                if(this._depositAmount != value)
+                {
+                    this._depositAmount = value;
+                    OnPropertyChanged("DepositAmount");
+                }
+            }
+        }
+
         #region PriceAutoProperties
 
         /// <summary>
@@ -170,7 +183,7 @@ namespace GunderMarket
         public double BroccoliPrice { get; set; } = .50;
         public double WaterPrice { get; set; } = 2.50;
         public double TomatoPrice { get; set; } = .75;
-        public double PeanutButterPrice { get; set; } = 1.75;
+        public double PeanutButterPrice { get; set; } = 1.75 ;
         public double CocaColaPrice { get; set; } = 3.00;
         public double MnMPrice { get; set; } = 1.00;
         public double SugarPrice { get; set; } = 1.50;
@@ -500,7 +513,7 @@ namespace GunderMarket
 
         #endregion
         #endregion
-        #region BalanceCalculator
+        #region Public Methods
 
         /// <summary>
         /// calculates the user's balance with the selected item quantities multiplied by their prices
@@ -533,9 +546,7 @@ namespace GunderMarket
 
             return NotSubtractedBalance;
         }
-        #endregion
-        #region AfterOrderBalanceCalculator
-
+        
         /// <summary>
         /// calculates what the user's balance will be if they purchase the selected items
         /// </summary>
@@ -544,8 +555,6 @@ namespace GunderMarket
             double newBalance = Balance - BalanceCalculator();
             return newBalance;
         }
-        #endregion
-        #region LoginChecks
 
         /// <summary>
         /// checks that user login info matches login info in the username and password lists, if it matches
@@ -562,8 +571,6 @@ namespace GunderMarket
                 OnPropertyChanged("IsLoggedIn");
             }
         }
-        #endregion
-        #region ResetPurchase
 
         /// <summary>
         /// if user finishes purchase, we clear all quantity textboxes in preparation for new order
@@ -592,6 +599,7 @@ namespace GunderMarket
             MnMQuantity = 0;
             SugarQuantity = 0;
         }
+
         #endregion
         #region Get ButtonCommands
 
