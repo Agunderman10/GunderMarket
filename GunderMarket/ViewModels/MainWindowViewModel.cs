@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Windows;
 using System.Windows.Input;
 
 namespace GunderMarket
@@ -148,6 +146,7 @@ namespace GunderMarket
             }
         }
 
+        //property represents amount that user wishes to deposit into their account
         public double DepositAmount
         {
             get => _depositAmount;
@@ -157,6 +156,20 @@ namespace GunderMarket
                 {
                     this._depositAmount = value;
                     OnPropertyChanged("DepositAmount");
+                }
+            }
+        }
+      
+        //property represents what balance will be after deposit
+        public double BalanceAfterDeposit
+        {
+            get => Balance;
+            set
+            {
+                if(BalanceAfterDeposit != (value))
+                {
+                    BalanceAfterDeposit = value + Balance + DepositAmount;
+                    OnPropertyChanged("BalanceAfterDeposit");
                 }
             }
         }
@@ -552,12 +565,11 @@ namespace GunderMarket
         /// </summary>
         public double AfterOrderBalanceCalculator()
         {
-            double newBalance = Balance - BalanceCalculator();
-            return newBalance;
+            return Balance - BalanceCalculator();
         }
 
         /// <summary>
-        /// checks that user login info matches login info in the username and password lists, if it matches
+        /// checks that user login info matches login info in the username and password lists, if it matches user can login
         /// </summary>
         public void LoginChecks()
         {

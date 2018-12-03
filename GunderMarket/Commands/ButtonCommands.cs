@@ -93,8 +93,12 @@ namespace GunderMarket
 
                 case "PurchaseButton":
 
-                   WarningBoxes();
+                    WarningBoxes();
                     
+                    break;
+                case "FinishDepositButton":
+                    //viewModel.AfterDepositCalculator();
+                    MainWindow.depositPage.Close();
                     break;
             }
         }
