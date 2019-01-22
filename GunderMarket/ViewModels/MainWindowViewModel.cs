@@ -60,7 +60,7 @@
             get => _defaultBalance;
             set
             {
-                Balance = BalanceCalculator() + _defaultBalance;
+                Balance = BalanceCalculator() + _defaultBalance + DepositPage.DepositWindowViewModel.DepositAmount;
                 OnPropertyChanged("Balance");
             }
         }
@@ -70,7 +70,7 @@
             get => AfterOrderBalanceCalculator();
             set
             {
-                AfterOrderBalance = AfterOrderBalanceCalculator();
+                AfterOrderBalance = AfterOrderBalanceCalculator() + DepositPage.DepositWindowViewModel.DepositAmount;
                 OnPropertyChanged("AfterOrderBalance");
             }
         }
@@ -486,7 +486,7 @@
         /// </summary>
         public double AfterOrderBalanceCalculator()
         {
-            return Balance - BalanceCalculator();
+            return Balance - BalanceCalculator() + DepositPage.DepositWindowViewModel.DepositAmount;
         }
 
         /// <summary>
@@ -532,12 +532,18 @@
             DepositPage.Show();
         }
 
+        public void CloseDepositWindow()
+        {
+            DepositPage.Close();
+            OnPropertyChanged(nameof(AfterOrderBalance));
+        }
+
         public void UserLoggedIn()
         {
             this.IsLoggedIn = true;
             OnPropertyChanged(nameof(IsLoggedIn));
         }
-
+        
         #endregion
         #region INotifyPropertyChanged Necessary Parts Definitions
 
