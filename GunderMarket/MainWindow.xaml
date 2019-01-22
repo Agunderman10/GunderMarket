@@ -44,7 +44,7 @@
                 <Button Content="Withdraw" Height="30" Grid.Column="0" Margin="1100 100 20 80" Command="{Binding OpenWithdraw}" CommandParameter="WithdrawPageButton"/>
 
                 <!-- Clear Order button-->
-                <Button Content="Clear Order" Height="30" Grid.Column="0" Margin="1100 130 20 40" Command="{Binding ButtonCommands}" CommandParameter="ClearOrderButton"/>
+                <Button Content="Clear Order" Height="30" Grid.Column="0" Margin="1100 130 20 40" Command="{Binding ClearOrderCommand}" CommandParameter="ClearOrderButton"/>
 
                 <!-- Logout button -->
                 <Button Content="Logout" Height="30" Grid.Column="0" Margin="1100 160 20 0" Command="{Binding LogoutCommand}" CommandParameter="LogoutButton"/>

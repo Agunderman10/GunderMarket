@@ -105,6 +105,11 @@
             get { return new ButtonCommands(OpenWithdrawWindow); }
         }
 
+        public ICommand ClearOrderCommand
+        {
+            get { return new ButtonCommands(ClearOrder); }
+        }
+
         public ICommand LogoutCommand
         {
             get {  return new ButtonCommands(Logout); }
@@ -585,6 +590,43 @@
         {
             WithdrawPage.Close();
             OnPropertyChanged(nameof(AfterOrderBalance));
+        }
+
+        private void ClearOrder()
+        {
+            if (IsLoggedIn == false)
+            {
+                MessageBox.Show("You are not logged in and cannot use this feature. " +
+                    "Click the login button to login.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            MessageBoxResult userChoice = MessageBox.Show("Are you sure you want to clear your order?", "Important Query",
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (userChoice == MessageBoxResult.Yes)
+            {
+                AppleQuantity = 0;
+                ChickenQuantity = 0;
+                OrangeQuantity = 0;
+                CarrotQuantity = 0;
+                PringleQuantity = 0;
+                CheeseQuantity = 0;
+                PepperQuantity = 0;
+                AvocadoQuantity = 0;
+                DietCokeQuantity = 0;
+                PistachioQuantity = 0;
+                PaperTowelQuantity = 0;
+                CheetoQuantity = 0;
+                GatoradeQuantity = 0;
+                SnickersQuantity = 0;
+                BroccoliQuantity = 0;
+                WaterQuantity = 0;
+                TomatoQuantity = 0;
+                PeanutButterQuantity = 0;
+                CocaColaQuantity = 0;
+                MnMQuantity = 0;
+                SugarQuantity = 0;
+            }
         }
 
         private void Logout()
