@@ -535,6 +535,12 @@
 
         private void OpenLoginWindow()
         {
+            if (IsLoggedIn == true)
+            {
+                MessageBox.Show("You are already logged in. You may logout by clicking the logout button.", 
+                    "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             LoginPage.Show();
         }
 
@@ -547,6 +553,13 @@
 
         private void OpenDepositWindow()
         {
+            if (IsLoggedIn == false)
+            {
+                MessageBox.Show("You are not logged in and cannot use this feature. " +
+                    "Click the login button to login.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             DepositPage.Show();
         }
 
@@ -558,6 +571,13 @@
 
         private void OpenWithdrawWindow()
         {
+            if (IsLoggedIn == false)
+            {
+                MessageBox.Show("You are not logged in and cannot use this feature. " +
+                    "Click the login button to login.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             WithdrawPage.Show();
         }
 
@@ -569,6 +589,13 @@
 
         private void Logout()
         {
+            if (IsLoggedIn == false)
+            {
+                MessageBox.Show("You are not logged in and cannot use this feature. " +
+                    "Click the login button to login.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             MessageBoxResult userChoice = MessageBox.Show("Are you sure you want to logout?", "Important Query", 
                 MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(userChoice == MessageBoxResult.Yes)
@@ -576,7 +603,7 @@
                 Environment.Exit(0);
             }
         }
-        
+
         #endregion
         #region INotifyPropertyChanged Necessary Parts Definitions
 
