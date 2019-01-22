@@ -35,9 +35,9 @@
         #endregion
         #region Public Properties
 
-        public static LoginPage LoginPage = new LoginPage();
-        public static DepositPage DepositPage = new DepositPage();
-        public static WithdrawPage WithdrawPage = new WithdrawPage();
+        private static LoginPage LoginPage = new LoginPage();
+        private static DepositPage DepositPage = new DepositPage();
+        private static WithdrawPage WithdrawPage = new WithdrawPage();
 
         /// <summary>
         /// property that tells if user is logged in, raises property changed event
@@ -455,13 +455,13 @@
 
         #endregion
         #endregion
-        #region Public Methods
+        #region Private and Public Methods
 
         /// <summary>
         /// calculates the user's balance with the selected item quantities multiplied by their prices
         /// </summary>
         /// <returns></returns>
-        public double BalanceCalculator()
+        private double BalanceCalculator()
         {
             double NotSubtractedBalance =
             ((AppleQuantity * ApplePrice) +
@@ -492,7 +492,7 @@
         /// <summary>
         /// calculates what the user's balance will be if they purchase the selected items
         /// </summary>
-        public double AfterOrderBalanceCalculator()
+        private double AfterOrderBalanceCalculator()
         {
             return Balance - BalanceCalculator() + DepositPage.DepositWindowViewModel.DepositAmount
                 - WithdrawPage.WithdrawWindowViewModel.WithdrawAmount;
@@ -501,7 +501,7 @@
         /// <summary>
         /// if user finishes purchase, we clear all quantity textboxes in preparation for new order
         /// </summary>
-        public void ResetPurchase()
+        private void ResetPurchase()
         {
             AppleQuantity = 0;
             ChickenQuantity = 0;
@@ -526,7 +526,7 @@
             SugarQuantity = 0;
         }
 
-        public void OpenLoginWindow()
+        private void OpenLoginWindow()
         {
             LoginPage.Show();
         }
@@ -538,7 +538,7 @@
             OnPropertyChanged(nameof(IsLoggedIn));
         }
 
-        public void OpenDepositWindow()
+        private void OpenDepositWindow()
         {
             DepositPage.Show();
         }
@@ -549,7 +549,7 @@
             OnPropertyChanged(nameof(AfterOrderBalance));
         }
 
-        public void OpenWithdrawWindow()
+        private void OpenWithdrawWindow()
         {
             WithdrawPage.Show();
         }
@@ -567,7 +567,7 @@
         /// if property is changed, invoke new propertychanged event
         /// </summary>
         /// <param name="propertyName"></param>
-        public void OnPropertyChanged(string propertyName)
+        private void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

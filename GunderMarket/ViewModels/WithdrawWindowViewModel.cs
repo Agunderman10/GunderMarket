@@ -23,7 +23,7 @@
             get { return new ButtonCommands(FinishWithdrawChecks); }
         }
 
-        public void FinishWithdrawChecks()
+        private void FinishWithdrawChecks()
         {
             MainWindow.mainWindowViewModel.CloseWithdrawWindow();
         }

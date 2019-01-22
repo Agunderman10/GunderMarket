@@ -23,7 +23,7 @@
             get { return new ButtonCommands(FinishDepositChecks); }
         }
 
-        public void FinishDepositChecks()
+        private void FinishDepositChecks()
         {
             MainWindow.mainWindowViewModel.CloseDepositWindow();
         }

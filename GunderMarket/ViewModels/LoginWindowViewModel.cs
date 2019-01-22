@@ -50,11 +50,11 @@
             get { return new ButtonCommands(FinishLoginChecks); }
         }
         #endregion
-        #region Public Methods
+        #region Private Methods
         /// <summary>
         /// checks that user login info matches login info in the username and password lists, if it matches user can login
         /// </summary>
-        public void FinishLoginChecks()
+        private void FinishLoginChecks()
         {
             if ((usernameList.Contains(EnteredUsername) &&
                passwordList.Contains(EnteredPassword)) &&
