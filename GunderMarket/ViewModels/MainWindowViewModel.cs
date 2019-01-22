@@ -36,6 +36,7 @@
         #region Public Properties
 
         public static LoginPage LoginPage = new LoginPage();
+        public static DepositPage DepositPage = new DepositPage();
 
         /// <summary>
         /// property that tells if user is logged in, raises property changed event
@@ -87,6 +88,11 @@
         public ICommand OpenLogin
         {
             get { return new ButtonCommands(OpenLoginWindow); }
+        }
+
+        public ICommand OpenDeposit
+        {
+            get { return new ButtonCommands(OpenDepositWindow); }
         }
 
         #region PriceAutoProperties
@@ -513,13 +519,17 @@
 
         public void OpenLoginWindow()
         {
-            
             LoginPage.Show();
         }
 
         public void CloseLoginWindow()
         {
             LoginPage.Close();
+        }
+
+        public void OpenDepositWindow()
+        {
+            DepositPage.Show();
         }
 
         public void UserLoggedIn()

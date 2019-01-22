@@ -7,9 +7,11 @@ namespace GunderMarket
     /// </summary>
     public partial class DepositPage : Window
     {
+        public static DepositWindowViewModel DepositWindowViewModel = new DepositWindowViewModel();
         public DepositPage()
         {
             InitializeComponent();
+            this.DataContext = DepositWindowViewModel;
         }
     }
 }

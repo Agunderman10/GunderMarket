@@ -35,10 +35,10 @@
                 <Button Content="Login" Height="30" Grid.Column="0" Margin="1100 10 20 200" Command="{Binding OpenLogin}" CommandParameter="LoginPageButton"/>
 
                 <!-- Create an Account button -->
-                <Button Content="Create an Account" Height="30" Grid.Column="0" Margin="1100 40 20 160" Command="{Binding ButtonCommands}" CommandParameter="CreateAccountPageButton"/>
+                <Button Content="Create an Account" Height="30" Grid.Column="0" Margin="1100 40 20 160" Command="{Binding CreateAccount}" CommandParameter="CreateAccountPageButton"/>
 
                 <!-- Deposit button -->
-                <Button Content="Deposit" Height="30" Grid.Column="0" Margin="1100 70 20 120" Command="{Binding ButtonCommands}" CommandParameter="DepositPageButton"/>
+                <Button Content="Deposit" Height="30" Grid.Column="0" Margin="1100 70 20 120" Command="{Binding OpenDeposit}" CommandParameter="DepositPageButton"/>
 
                 <!-- Withdraw button-->
                 <Button Content="Withdraw" Height="30" Grid.Column="0" Margin="1100 100 20 80" Command="{Binding ButtonCommands}" CommandParameter="WithdrawPageButton"/>
