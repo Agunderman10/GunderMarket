@@ -1,5 +1,6 @@
 ﻿namespace GunderMarket
 {
+    using System;
     using System.ComponentModel;
     using System.Windows.Input;
 
@@ -101,6 +102,11 @@
         public ICommand OpenWithdraw
         {
             get { return new ButtonCommands(OpenWithdrawWindow); }
+        }
+
+        public ICommand LogoutCommand
+        {
+            get {  return new ButtonCommands(Logout); }
         }
 
         #region PriceAutoProperties
@@ -558,6 +564,11 @@
         {
             WithdrawPage.Close();
             OnPropertyChanged(nameof(AfterOrderBalance));
+        }
+
+        private void Logout()
+        {
+            Environment.Exit(0);
         }
         
         #endregion

@@ -47,7 +47,7 @@
                 <Button Content="Clear Order" Height="30" Grid.Column="0" Margin="1100 130 20 40" Command="{Binding ButtonCommands}" CommandParameter="ClearOrderButton"/>
 
                 <!-- Logout button -->
-                <Button Content="Logout" Height="30" Grid.Column="0" Margin="1100 160 20 0" Command="{Binding ButtonCommands}" CommandParameter="LogoutButton"/>
+                <Button Content="Logout" Height="30" Grid.Column="0" Margin="1100 160 20 0" Command="{Binding LogoutCommand}" CommandParameter="LogoutButton"/>
 
                 <!-- Defining the Grid that contains the Stack Panel that contains all store items -->
             </Grid>
