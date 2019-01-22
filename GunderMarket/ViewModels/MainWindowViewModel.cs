@@ -592,6 +592,9 @@
             OnPropertyChanged(nameof(AfterOrderBalance));
         }
 
+        /// <summary>
+        /// check to see if user is logged in, if so we ask if they want to clear their order, if so we clear it
+        /// </summary>
         private void ClearOrder()
         {
             if (IsLoggedIn == false)
@@ -629,6 +632,10 @@
             }
         }
 
+        /// <summary>
+        /// checks to see if user is logged in, if so we check to make sure they want to logout, if yes we log them out and
+        /// close the application
+        /// </summary>
         private void Logout()
         {
             if (IsLoggedIn == false)
