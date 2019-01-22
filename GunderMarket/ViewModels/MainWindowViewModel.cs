@@ -12,6 +12,7 @@
 
         private bool _isLoggedIn = false;
         private double _defaultBalance = 0;
+        private double _purchaseAmount = 0;
         private int _appleQuantity;
         private int _chickenQuantity;
         private int _orangeQuantity;
@@ -63,8 +64,8 @@
             get => _defaultBalance;
             set
             {
-                Balance = BalanceCalculator() + _defaultBalance - DepositPage.DepositWindowViewModel.DepositAmount
-                    + WithdrawPage.WithdrawWindowViewModel.WithdrawAmount;
+                Balance = BalanceCalculator() + _defaultBalance + DepositPage.DepositWindowViewModel.DepositAmount
+                    - WithdrawPage.WithdrawWindowViewModel.WithdrawAmount;
                 OnPropertyChanged("Balance");
             }
         }
@@ -74,8 +75,8 @@
             get => AfterOrderBalanceCalculator();
             set
             {
-                AfterOrderBalance = AfterOrderBalanceCalculator() - DepositPage.DepositWindowViewModel.DepositAmount
-                    + WithdrawPage.WithdrawWindowViewModel.WithdrawAmount;
+                AfterOrderBalance = AfterOrderBalanceCalculator() + DepositPage.DepositWindowViewModel.DepositAmount
+                    - WithdrawPage.WithdrawWindowViewModel.WithdrawAmount - _purchaseAmount;
                 OnPropertyChanged("AfterOrderBalance");
             }
         }
@@ -113,6 +114,11 @@
         public ICommand LogoutCommand
         {
             get {  return new ButtonCommands(Logout); }
+        }
+
+        public ICommand PurchaseCommand
+        {
+            get { return new ButtonCommands(Purchase); }
         }
 
         #region PriceAutoProperties
@@ -507,7 +513,7 @@
         private double AfterOrderBalanceCalculator()
         {
             return Balance - BalanceCalculator() + DepositPage.DepositWindowViewModel.DepositAmount
-                - WithdrawPage.WithdrawWindowViewModel.WithdrawAmount;
+                - WithdrawPage.WithdrawWindowViewModel.WithdrawAmount - _purchaseAmount;
         }
 
         /// <summary>
@@ -674,6 +680,33 @@
             if(userChoice == MessageBoxResult.Yes)
             {
                 Environment.Exit(0);
+            }
+        }
+
+        public void Purchase()
+        {
+            if(OrderTotal == 0)
+            {
+                MessageBox.Show("You have not chosen any items for purchase. You must choose an item to be able to complete " +
+                    "your purchase.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            else if(AfterOrderBalance < 0)
+            {
+                MessageBox.Show("You may not purchase items if you have a negative balance. Please deposit more money or " +
+                    "reduce the amount of items in your purchase.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            MessageBoxResult userChoice = MessageBox.Show("Are you sure you want to make a purchase of $" + OrderTotal + 
+                "? You may not be able to undo your purchase.", "Purchase Confirmation", MessageBoxButton.YesNo, 
+                MessageBoxImage.Warning);
+            if(userChoice == MessageBoxResult.Yes)
+            {
+                _purchaseAmount = _purchaseAmount + OrderTotal;
+                OnPropertyChanged(nameof(Balance));
+                OnPropertyChanged(nameof(AfterOrderBalance));
+                ResetPurchase();
             }
         }
 

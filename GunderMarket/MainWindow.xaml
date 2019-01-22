@@ -305,7 +305,7 @@
                     </TextBlock>
 
                     <!-- Allows user to purchase items selected-->
-                    <Button Content="Purchase" FontSize="50" Background="Firebrick" Grid.Column="4" Command="{Binding ButtonCommands}" CommandParameter="PurchaseButton"/>
+                    <Button Content="Purchase" FontSize="50" Background="Firebrick" Grid.Column="4" Command="{Binding PurchaseCommand}" CommandParameter="PurchaseButton"/>
 
                     <TextBlock Grid.Row="1" Grid.ColumnSpan="5" Text="Thank you for shopping at the GunderMarket!" FontSize="55" FontWeight="ExtraBold" TextAlignment="Center" Background="Blue"/>
 

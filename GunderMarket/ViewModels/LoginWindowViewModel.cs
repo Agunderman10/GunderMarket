@@ -54,6 +54,7 @@
         #region Private Methods
         /// <summary>
         /// checks that user login info matches login info in the username and password lists, if it matches user can login
+        /// if not, we notify the user with a message
         /// </summary>
         private void FinishLoginChecks()
         {
