@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace GunderMarket
+﻿namespace GunderMarket
 {
+    using System.Windows.Input;
+
     public class WithdrawWindowViewModel
     {
         private double _withdrawAmount;
