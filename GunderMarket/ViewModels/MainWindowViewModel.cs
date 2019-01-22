@@ -683,7 +683,7 @@
             }
         }
 
-        public void Purchase()
+        private void Purchase()
         {
             if(OrderTotal == 0)
             {
