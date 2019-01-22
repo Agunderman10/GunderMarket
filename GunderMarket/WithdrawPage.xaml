@@ -24,14 +24,10 @@
 
         <!-- TextBlock and TextBox for withdraw -->
         <TextBlock Text="Withdraw:" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold"/>
-        <TextBox BorderBrush="Black" BorderThickness="3" Padding="3" Margin="-45 15 30 10" Grid.Column="1"/>
-
-        <!-- TextBlock and TextBox for balance -->
-        <TextBlock Text="Balance:" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold" Grid.Row="1"/>
-        <TextBox IsReadOnly="True" BorderBrush="Black" BorderThickness="3" Padding="3" Margin="-60 15 30 10" Grid.Column="1" Grid.Row="1"/>
+        <TextBox Text="{Binding WithdrawAmount, UpdateSourceTrigger=PropertyChanged}" BorderBrush="Black" BorderThickness="3" Padding="3" Margin="-45 15 30 10" Grid.Column="1"/>
 
         <!-- Button to finish withdraw -->
-        <Button Content="Finish Withdraw" Grid.Column="1" Grid.Row="2" FontWeight="Bold"  Margin="120 10 30 10" Background="Firebrick"/>
+        <Button Command="{Binding FinishWithdraw}" Content="Finish Withdraw" Grid.Column="1" Grid.Row="2" FontWeight="Bold"  Margin="120 10 30 10" Background="Firebrick"/>
         
     </Grid>
 </Window>
