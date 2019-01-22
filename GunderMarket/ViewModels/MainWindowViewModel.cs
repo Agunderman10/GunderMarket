@@ -35,6 +35,8 @@
         #endregion
         #region Public Properties
 
+        public static LoginPage LoginPage = new LoginPage();
+
         /// <summary>
         /// property that tells if user is logged in, raises property changed event
         /// </summary>
@@ -511,8 +513,13 @@
 
         public void OpenLoginWindow()
         {
-            LoginPage LoginPage = new LoginPage();
+            
             LoginPage.Show();
+        }
+
+        public void CloseLoginWindow()
+        {
+            LoginPage.Close();
         }
 
         public void UserLoggedIn()

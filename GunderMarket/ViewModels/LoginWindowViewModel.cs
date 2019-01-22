@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace GunderMarket
 {
@@ -47,6 +48,11 @@ namespace GunderMarket
                 }
             }
         }
+
+        public ICommand FinishLogin
+        {
+            get { return new ButtonCommands(FinishLoginChecks); }
+        }
         #endregion
         #region Public Methods
         /// <summary>
@@ -59,6 +65,7 @@ namespace GunderMarket
                (usernameList.IndexOf(EnteredUsername) ==
                (passwordList.IndexOf(EnteredPassword))))
             {
+                MainWindow.mainWindowViewModel.CloseLoginWindow();
                 MainWindow.mainWindowViewModel.UserLoggedIn();
             }
         }
