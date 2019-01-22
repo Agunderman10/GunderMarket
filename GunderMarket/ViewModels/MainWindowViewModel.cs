@@ -2,6 +2,7 @@
 {
     using System;
     using System.ComponentModel;
+    using System.Windows;
     using System.Windows.Input;
 
     public class MainWindowViewModel : INotifyPropertyChanged
@@ -568,7 +569,12 @@
 
         private void Logout()
         {
-            Environment.Exit(0);
+            MessageBoxResult userChoice = MessageBox.Show("Are you sure you want to logout?", "Important Query", 
+                MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if(userChoice == MessageBoxResult.Yes)
+            {
+                Environment.Exit(0);
+            }
         }
         
         #endregion
