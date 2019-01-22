@@ -58,6 +58,7 @@
     <Compile Include="ViewModels\DepositWindowViewModel.cs" />
     <Compile Include="ViewModels\LoginWindowViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\WithdrawWindowViewModel.cs" />
     <Compile Include="WithdrawPage.xaml.cs">
       <DependentUpon>WithdrawPage.xaml</DependentUpon>
     </Compile>

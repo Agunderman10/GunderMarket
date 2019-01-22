@@ -19,9 +19,11 @@ namespace GunderMarket
     /// </summary>
     public partial class WithdrawPage : Window
     {
+        public static WithdrawWindowViewModel WithdrawWindowViewModel = new WithdrawWindowViewModel();
         public WithdrawPage()
         {
             InitializeComponent();
+            this.DataContext = WithdrawWindowViewModel;
         }
     }
 }
