@@ -38,18 +38,6 @@ namespace GunderMarket
 
         #endregion
 
-        #region Initial Constructor
-
-        /// <summary>
-        /// Constructor calls ButtonCommands
-        /// </summary>
-        public MainWindowViewModel()
-        {
-            ButtonCommands = new ButtonCommands(this);
-        }
-
-        #endregion
-
         #region Username and Password Lists
         /// <summary>
         /// lists that contain all username and password login info, used to check if user login info matches
@@ -611,14 +599,6 @@ namespace GunderMarket
             MnMQuantity = 0;
             SugarQuantity = 0;
         }
-
-        #endregion
-        #region Get ButtonCommands
-
-        /// <summary>
-        /// gets ButtonCommands
-        /// </summary>
-        public ICommand ButtonCommands { get; }
 
         #endregion
 
