@@ -33,6 +33,6 @@
         <TextBox Name="PasswordTextBox" Text="{Binding EnteredPassword}" BorderBrush="Black" BorderThickness="3" Padding="3" Grid.Column="1" Grid.Row="1" Margin="-30 15 30 5" VerticalAlignment="Center"/>
 
         <!-- Finish Login button -->
-        <Button Content="Finish Login" Grid.Column="1" Grid.Row="2" FontWeight="Bold" Margin="130 10 30 10" Background="Firebrick" Command="{Binding ButtonCommands}" CommandParameter="FinishLoginButton"/>
+        <Button Content="Finish Login" Grid.Column="1" Grid.Row="2" FontWeight="Bold" Margin="130 10 30 10" Background="Firebrick" Command="{Binding FinishLoginChecks}" CommandParameter="FinishLoginButton"/>
     </Grid>
 </Window>

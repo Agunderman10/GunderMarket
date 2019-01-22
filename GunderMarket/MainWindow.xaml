@@ -32,7 +32,7 @@
                 <TextBlock Text="GunderMarket" FontSize="90" FontWeight="ExtraBold"/>
 
                 <!-- Login button -->
-                <Button Content="Login" Height="30" Grid.Column="0" Margin="1100 10 20 200" Command="{Binding ButtonCommands}" CommandParameter="LoginPageButton"/>
+                <Button Content="Login" Height="30" Grid.Column="0" Margin="1100 10 20 200" Command="{Binding OpenLogin}" CommandParameter="LoginPageButton"/>
 
                 <!-- Create an Account button -->
                 <Button Content="Create an Account" Height="30" Grid.Column="0" Margin="1100 40 20 160" Command="{Binding ButtonCommands}" CommandParameter="CreateAccountPageButton"/>

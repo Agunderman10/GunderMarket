@@ -1,6 +1,7 @@
 ﻿namespace GunderMarket
 {
     using System.ComponentModel;
+    using System.Windows.Input;
 
     public class MainWindowViewModel : INotifyPropertyChanged
     {
@@ -79,6 +80,11 @@
                 OrderTotal = BalanceCalculator();
                 OnPropertyChanged("OrderTotal");
             }
+        }
+
+        public ICommand OpenLogin
+        {
+            get { return new ButtonCommands(OpenLoginWindow); }
         }
 
         #region PriceAutoProperties
@@ -501,6 +507,18 @@
             CocaColaQuantity = 0;
             MnMQuantity = 0;
             SugarQuantity = 0;
+        }
+
+        public void OpenLoginWindow()
+        {
+            LoginPage LoginPage = new LoginPage();
+            LoginPage.Show();
+        }
+
+        public void UserLoggedIn()
+        {
+            this.IsLoggedIn = true;
+            OnPropertyChanged(nameof(IsLoggedIn));
         }
 
         #endregion

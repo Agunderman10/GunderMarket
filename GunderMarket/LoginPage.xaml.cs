@@ -7,9 +7,11 @@ namespace GunderMarket
     /// </summary>
     public partial class LoginPage : Window
     {
+        public static LoginWindowViewModel LoginPageViewModel = new LoginWindowViewModel();
         public LoginPage()
         {
             InitializeComponent();
+            this.DataContext = LoginPageViewModel;
         }
     }
 }
