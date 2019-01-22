@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Windows.Input;
-
-namespace GunderMarket
+﻿namespace GunderMarket
 {
+    using System.ComponentModel;
+
     public class MainWindowViewModel : INotifyPropertyChanged
     {
 
@@ -11,7 +9,6 @@ namespace GunderMarket
 
         private bool _isLoggedIn = false;
         private double _defaultBalance = 0;
-        private double _depositAmount = 0;
         private int _appleQuantity;
         private int _chickenQuantity;
         private int _orangeQuantity;

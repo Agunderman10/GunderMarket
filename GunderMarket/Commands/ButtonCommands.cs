@@ -1,9 +1,8 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Input;
-
-namespace GunderMarket
+﻿namespace GunderMarket
 {
+    using System;
+    using System.Windows.Input;
+
     internal sealed class ButtonCommands : ICommand
     {
         private Action _action;
