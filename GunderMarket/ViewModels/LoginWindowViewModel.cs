@@ -1,6 +1,7 @@
 ﻿namespace GunderMarket
 {
     using System.Collections.Generic;
+    using System.Windows;
     using System.Windows.Input;
 
     public class LoginWindowViewModel
@@ -62,6 +63,11 @@
                (passwordList.IndexOf(EnteredPassword))))
             {
                 MainWindow.mainWindowViewModel.CloseLoginWindow();
+            }
+            else
+            {
+                MessageBox.Show("Your username or password is incorrect. Please try again.", "Notice", 
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         #endregion
