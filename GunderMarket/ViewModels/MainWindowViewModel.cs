@@ -546,7 +546,15 @@
                     "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-            LoginPage.Show();
+            try
+            {
+                LoginPage.Show();
+            }
+            catch(InvalidOperationException)
+            {
+                MessageBox.Show("For security reasons, you can only use the login button once per session. Please restart " +
+                    "your application to be able to use it again.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         public void CloseLoginWindow()
