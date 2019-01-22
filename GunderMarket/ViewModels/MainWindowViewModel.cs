@@ -10,9 +10,7 @@ namespace GunderMarket
         #region Private Members
 
         private bool _isLoggedIn = false;
-        private string _enteredUsername;
-        private string _enteredPassword;
-        private double _defaultBalance = 1000;
+        private double _defaultBalance = 0;
         private double _depositAmount = 0;
         private int _appleQuantity;
         private int _chickenQuantity;
@@ -37,22 +35,6 @@ namespace GunderMarket
         private int _sugarQuantity;
 
         #endregion
-
-        #region Username and Password Lists
-        /// <summary>
-        /// lists that contain all username and password login info, used to check if user login info matches
-        /// </summary>
-        private List<string> usernameList = new List<string>
-        {
-            "admin"
-        };
-        private List<string> passwordList = new List<string>
-        {
-            "12345"
-        };
-
-        #endregion
-
         #region Public Properties
 
         /// <summary>
@@ -68,38 +50,6 @@ namespace GunderMarket
                     this._isLoggedIn = value;
                     OnPropertyChanged("IsLoggedIn");
                     OnPropertyChanged("Balance");
-                }
-            }
-        }
-
-        /// <summary>
-        /// property sets EnteredUsername to value that user enters into the username textbox, raises propertychanged event
-        /// </summary>
-        public string EnteredUsername
-        {
-            get => this._enteredUsername;
-            set
-            {
-                if (this._enteredUsername != value)
-                {
-                    this._enteredUsername = value;
-                    OnPropertyChanged("EnteredUsername");
-                }
-            }
-        }
-
-        /// <summary>
-        /// property sets EnteredPassword to value that user enters into the password textbox, raises propertychanged event
-        /// </summary>
-        public string EnteredPassword
-        {
-            get => this._enteredPassword;
-            set
-            {
-                if (this._enteredPassword != value)
-                {
-                    this._enteredPassword = value;
-                    OnPropertyChanged("EnteredPassword");
                 }
             }
         }
@@ -131,34 +81,6 @@ namespace GunderMarket
             {
                 OrderTotal = BalanceCalculator();
                 OnPropertyChanged("OrderTotal");
-            }
-        }
-
-        //property represents amount that user wishes to deposit into their account
-        public double DepositAmount
-        {
-            get => _depositAmount;
-            set
-            {
-                if(this._depositAmount != value)
-                {
-                    this._depositAmount = value;
-                    OnPropertyChanged("DepositAmount");
-                }
-            }
-        }
-      
-        //property represents what balance will be after deposit
-        public double BalanceAfterDeposit
-        {
-            get => Balance;
-            set
-            {
-                if(BalanceAfterDeposit != (value))
-                {
-                    BalanceAfterDeposit = value + Balance + DepositAmount;
-                    OnPropertyChanged("BalanceAfterDeposit");
-                }
             }
         }
 
@@ -557,22 +479,6 @@ namespace GunderMarket
         }
 
         /// <summary>
-        /// checks that user login info matches login info in the username and password lists, if it matches user can login
-        /// </summary>
-        public void LoginChecks()
-        {
-            if ((usernameList.Contains(EnteredUsername) &&
-               passwordList.Contains(EnteredPassword)) &&
-               (usernameList.IndexOf(EnteredUsername) ==
-               (passwordList.IndexOf(EnteredPassword))))
-            {
-                IsLoggedIn = true;
-                MainWindow.loginPage.Close();
-                OnPropertyChanged("IsLoggedIn");
-            }
-        }
-
-        /// <summary>
         /// if user finishes purchase, we clear all quantity textboxes in preparation for new order
         /// </summary>
         public void ResetPurchase()
@@ -601,7 +507,6 @@ namespace GunderMarket
         }
 
         #endregion
-
         #region INotifyPropertyChanged Necessary Parts Definitions
 
         /// <summary>
