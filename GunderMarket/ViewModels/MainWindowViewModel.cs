@@ -573,7 +573,15 @@
                 return;
             }
 
-            DepositPage.Show();
+            try
+            {
+                DepositPage.Show();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("For security reasons, you can only use the deposit button once per session. Please restart " +
+                    "your application to be able to use it again.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         public void CloseDepositWindow()
@@ -591,7 +599,15 @@
                 return;
             }
 
-            WithdrawPage.Show();
+            try
+            {
+                WithdrawPage.Show();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("For security reasons, you can only use the withdraw button once per session. Please restart " +
+                    "your application to be able to use it again.", "Notice", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         public void CloseWithdrawWindow()
