@@ -41,7 +41,7 @@
                 <Button Content="Deposit" Height="30" Grid.Column="0" Margin="1100 70 20 120" Command="{Binding OpenDeposit}" CommandParameter="DepositPageButton"/>
 
                 <!-- Withdraw button-->
-                <Button Content="Withdraw" Height="30" Grid.Column="0" Margin="1100 100 20 80" Command="{Binding ButtonCommands}" CommandParameter="WithdrawPageButton"/>
+                <Button Content="Withdraw" Height="30" Grid.Column="0" Margin="1100 100 20 80" Command="{Binding OpenWithdraw}" CommandParameter="WithdrawPageButton"/>
 
                 <!-- Clear Order button-->
                 <Button Content="Clear Order" Height="30" Grid.Column="0" Margin="1100 130 20 40" Command="{Binding ButtonCommands}" CommandParameter="ClearOrderButton"/>

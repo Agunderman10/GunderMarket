@@ -66,7 +66,6 @@ namespace GunderMarket
                (passwordList.IndexOf(EnteredPassword))))
             {
                 MainWindow.mainWindowViewModel.CloseLoginWindow();
-                MainWindow.mainWindowViewModel.UserLoggedIn();
             }
         }
         #endregion

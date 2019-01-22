@@ -37,6 +37,7 @@
 
         public static LoginPage LoginPage = new LoginPage();
         public static DepositPage DepositPage = new DepositPage();
+        public static WithdrawPage WithdrawPage = new WithdrawPage();
 
         /// <summary>
         /// property that tells if user is logged in, raises property changed event
@@ -60,7 +61,8 @@
             get => _defaultBalance;
             set
             {
-                Balance = BalanceCalculator() + _defaultBalance + DepositPage.DepositWindowViewModel.DepositAmount;
+                Balance = BalanceCalculator() + _defaultBalance - DepositPage.DepositWindowViewModel.DepositAmount
+                    + WithdrawPage.WithdrawWindowViewModel.WithdrawAmount;
                 OnPropertyChanged("Balance");
             }
         }
@@ -70,7 +72,8 @@
             get => AfterOrderBalanceCalculator();
             set
             {
-                AfterOrderBalance = AfterOrderBalanceCalculator() + DepositPage.DepositWindowViewModel.DepositAmount;
+                AfterOrderBalance = AfterOrderBalanceCalculator() - DepositPage.DepositWindowViewModel.DepositAmount
+                    + WithdrawPage.WithdrawWindowViewModel.WithdrawAmount;
                 OnPropertyChanged("AfterOrderBalance");
             }
         }
@@ -93,6 +96,11 @@
         public ICommand OpenDeposit
         {
             get { return new ButtonCommands(OpenDepositWindow); }
+        }
+
+        public ICommand OpenWithdraw
+        {
+            get { return new ButtonCommands(OpenWithdrawWindow); }
         }
 
         #region PriceAutoProperties
@@ -486,7 +494,8 @@
         /// </summary>
         public double AfterOrderBalanceCalculator()
         {
-            return Balance - BalanceCalculator() + DepositPage.DepositWindowViewModel.DepositAmount;
+            return Balance - BalanceCalculator() + DepositPage.DepositWindowViewModel.DepositAmount
+                - WithdrawPage.WithdrawWindowViewModel.WithdrawAmount;
         }
 
         /// <summary>
@@ -524,7 +533,9 @@
 
         public void CloseLoginWindow()
         {
+            this.IsLoggedIn = true;
             LoginPage.Close();
+            OnPropertyChanged(nameof(IsLoggedIn));
         }
 
         public void OpenDepositWindow()
@@ -538,10 +549,15 @@
             OnPropertyChanged(nameof(AfterOrderBalance));
         }
 
-        public void UserLoggedIn()
+        public void OpenWithdrawWindow()
         {
-            this.IsLoggedIn = true;
-            OnPropertyChanged(nameof(IsLoggedIn));
+            WithdrawPage.Show();
+        }
+
+        public void CloseWithdrawWindow()
+        {
+            WithdrawPage.Close();
+            OnPropertyChanged(nameof(AfterOrderBalance));
         }
         
         #endregion
